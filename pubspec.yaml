@@ -1,0 +1,49 @@
+name: ecosort
+description: EcoSort — smart waste segregation and collection (SDG 11 mini-project).
+publish_to: "none"
+version: 1.0.0+1
+
+# Dart 3 / Flutter 3.16+ is enough for Material 3 + records.
+environment:
+  sdk: ">=3.2.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # State management — one ChangeNotifier per feature (see lib/providers/).
+  provider: ^6.1.2
+
+  # Charts for the Admin analytics dashboard.
+  fl_chart: ^0.69.2
+
+  # Camera / gallery for citizen issue reports.
+  image_picker: ^1.1.2
+
+  # GPS for "Report an Issue" auto-location.
+  geolocator: ^13.0.2
+
+  # Cached images (used if a report photo is a network URL).
+  cached_network_image: ^3.4.1
+
+  # Google Maps — EcoMap falls back to a custom-painted campus map
+  # when no API key is set in lib/config/app_config.dart.
+  google_maps_flutter: ^2.9.0
+
+  # Firebase packages are listed so switching modes is a config flag,
+  # not a rewrite. They are NOT initialized unless AppConfig.useFirebase
+  # is true, so mock mode needs no google-services.json / API keys.
+  firebase_core: ^3.8.1
+  firebase_auth: ^5.3.4
+  cloud_firestore: ^5.6.0
+  firebase_storage: ^12.3.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
